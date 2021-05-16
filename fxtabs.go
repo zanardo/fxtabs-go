@@ -70,8 +70,14 @@ func OpenTabs(filePath string) ([]FirefoxTab, error) {
 	var tabs []FirefoxTab
 	for _, w := range data.Windows {
 		for _, t := range w.Tabs {
+			index := t.Index - 1
+			var cur uint = 0
 			for _, e := range t.Entries {
-				tabs = append(tabs, FirefoxTab{Title: e.Title, URL: e.URL})
+				if cur == index {
+					tabs = append(tabs, FirefoxTab{Title: e.Title, URL: e.URL})
+					break
+				}
+				cur++
 			}
 		}
 	}

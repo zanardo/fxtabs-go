@@ -7,6 +7,7 @@ type jsonData struct {
 				Title string
 				URL   string
 			}
+			Index uint
 		}
 	}
 }
