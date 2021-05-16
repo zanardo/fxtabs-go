@@ -15,7 +15,7 @@ whenever there is a browsing/tabs action.
 Import package in your project:
 
 ```
-go get github.com/zanardo/fxtabs.go
+go get github.com/zanardo/fxtabs-go
 ```
 
 Collect open tabs:
@@ -31,8 +31,8 @@ func main() {
         panic(err)
     }
     for _, tab := range tabs {
-        fmt.Printf("title: %s", tab.Title)
-        fmt.Printf("url: %s", tab.URL)
+        fmt.Printf("title: %s\n", tab.Title)
+        fmt.Printf("url: %s\n", tab.URL)
     }
 }
 ```
