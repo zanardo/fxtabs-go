@@ -52,9 +52,8 @@ func getRawJSON(filePath string) ([]byte, error) {
 	return dst, nil
 }
 
-// OpenTabs collect Firefox open tabs from a recovery file (recovery.jsonlz4).
-// This file is written almost in real time by Firefox (there are some seconds'
-// delay).
+// OpenTabs collect Firefox open tabs from a recovery file (recovery.jsonlz4). This file
+// is written almost in real time by Firefox (there are some seconds' delay).
 func OpenTabs(filePath string) ([]FirefoxTab, error) {
 	tabsJson, err := getRawJSON(filePath)
 	if err != nil {
